@@ -5,10 +5,13 @@ import { useState } from "react"
 
 export default function TaskBoard(){
   const [task, setTask] = useState([]);
+  const [ taskInput, setTaskInupt] = useState('');
+  const [ asignee, setAsignee] = useState('')
   
   
   var taskID = task.length;
-  function handleFormSubmit(taskInput, asignee){
+  function handleFormSubmit(e){
+    e.preventDefault();
     setTask([
      ...task,
      {
@@ -18,6 +21,10 @@ export default function TaskBoard(){
        done: false
      }
     ]);
+    e.target.reset(); //This works
+    //this is still not working after lifting state
+    // setTaskInupt("");
+    // setAsignee("");
     
   }
 
@@ -45,10 +52,18 @@ export default function TaskBoard(){
 
     return (
         <div className="TaskBoard">
-          <CreateTaskForm onHandleSubmit = { handleFormSubmit } />
+          <CreateTaskForm 
+            onHandleSubmit = { handleFormSubmit }
+            onSetTaskInput = {setTaskInupt}
+            onSetAsignee = {setAsignee}
+          />
           <div className="tasks">
-            <TodoCategory taskData = { task } onHandleMoveToDone = { handleMoveToDone } />
-            <DoneCategory taskData = { task } onHandleUndo={ handleUndo } />
+            <TodoCategory taskData = { task }
+             onHandleMoveToDone = { handleMoveToDone } 
+            />
+            <DoneCategory taskData = { task }
+             onHandleUndo={ handleUndo } 
+            />
           </div>
         </div>
     )
