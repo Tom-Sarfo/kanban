@@ -9,23 +9,18 @@ export default function TaskBoard(){
   const [ asignee, setAsignee] = useState('')
   
   
-  var taskID = task.length;
   function handleFormSubmit(e){
     e.preventDefault();
     setTask([
      ...task,
      {
-       id: taskID + 1,
+       id: task.length + 1,
        task: taskInput,
        assignedTo: asignee,
        done: false
      }
     ]);
-    e.target.reset(); //This works
-    //this is still not working after lifting state
-    // setTaskInupt("");
-    // setAsignee("");
-    
+    e.target.reset();
   }
 
   function handleMoveToDone(checkedTask){
@@ -54,8 +49,8 @@ export default function TaskBoard(){
         <div className="TaskBoard">
           <CreateTaskForm 
             onHandleSubmit = { handleFormSubmit }
-            onSetTaskInput = {setTaskInupt}
-            onSetAsignee = {setAsignee}
+            setTaskInput = {setTaskInupt}
+            setAsignee = {setAsignee}
           />
           <div className="tasks">
             <TodoCategory taskData = { task }
