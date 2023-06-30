@@ -5,20 +5,22 @@ import { useState } from "react"
 
 export default function TaskBoard(){
   const [task, setTask] = useState([]);
+  const [ taskInput, setTaskInupt] = useState('');
+  const [ asignee, setAsignee] = useState('')
   
   
-  var taskID = task.length;
-  function handleFormSubmit(taskInput, asignee){
+  function handleFormSubmit(e){
+    e.preventDefault();
     setTask([
      ...task,
      {
-       id: taskID + 1,
+       id: task.length + 1,
        task: taskInput,
        assignedTo: asignee,
        done: false
      }
     ]);
-    
+    e.target.reset();
   }
 
   function handleMoveToDone(checkedTask){
@@ -45,10 +47,18 @@ export default function TaskBoard(){
 
     return (
         <div className="TaskBoard">
-          <CreateTaskForm onHandleSubmit = { handleFormSubmit } />
+          <CreateTaskForm 
+            onHandleSubmit = { handleFormSubmit }
+            setTaskInput = {setTaskInupt}
+            setAsignee = {setAsignee}
+          />
           <div className="tasks">
-            <TodoCategory taskData = { task } onHandleMoveToDone = { handleMoveToDone } />
-            <DoneCategory taskData = { task } onHandleUndo={ handleUndo } />
+            <TodoCategory taskData = { task }
+             onHandleMoveToDone = { handleMoveToDone } 
+            />
+            <DoneCategory taskData = { task }
+             onHandleUndo={ handleUndo } 
+            />
           </div>
         </div>
     )
