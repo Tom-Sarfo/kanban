@@ -16,7 +16,7 @@ export default function ProjectBoard() {
         ))}
       </div>
         
-        <Link to="/board/createproject" className="float-btn">
+        <Link to="/board" className="float-btn">
          <div className="float-btn-container"><span>Add Project</span></div>
         </Link>
     </main>

@@ -39,7 +39,6 @@
 .ProjectInfo{
     flex-direction: column;
     padding: 1rem;
-    /* align-self: start;    */
 }
 
 .ProjectInfo h3{
@@ -47,7 +46,6 @@
     color: black;
     font-size:large;
     font-weight: 300;
-    /* align-self: start; */
 }
 
 .TeamMembers{
