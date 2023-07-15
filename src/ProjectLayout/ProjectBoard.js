@@ -12,7 +12,7 @@ export default function ProjectBoard() {
         <h2>My Projects</h2>
          <hr />
         {projects.map(project => (
-          <Link to={`/board/projects/${project.id}`}  key={project.id}><ProjectCard project = {project} /></Link>
+          <Link to={`/projects/${project.id}`}  key={project.id}><ProjectCard project = {project} /></Link>
         ))}
       </div>
         

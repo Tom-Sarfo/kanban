@@ -1,4 +1,5 @@
 import KanbanBoard from "./KanbanBoard";
+import TaskBoard from "./TaskBoard"
 import ProjectBoard from "./ProjectLayout/ProjectBoard"
 import CreateProjectForm from "./ProjectLayout/CreateProjectForm"
 import ErrorPage from "./ErrorPage";
@@ -16,6 +17,10 @@ export const Routes = [
         {
           path: '/',
           element: <ProjectBoard />,
+        },
+        {
+          path: '/projects/:projectId',
+          element: <TaskBoard />
         },
       ]
     },
