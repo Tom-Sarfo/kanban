@@ -1,0 +1,89 @@
+/* CreateProjectForm start here (re-usable) */
+.CreateProjectForm {
+    display: flex;
+    min-width: 500px;
+    min-height: 250px;
+    background-color: white;
+    box-shadow: 2px 2px 3px #7a7a7a;
+    margin-top: 0.5rem;
+}
+
+.side-color{
+    min-width: 5px;
+    min-height: 50px;
+    background-color: grey;
+}
+
+.form {
+    padding: 1rem;
+    align-items: center;
+    
+    
+}
+ .form h2 {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #7a7a7a;
+
+ }
+#projectNameId{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid grey;
+    margin: 0.5rem;
+    width: 308px;
+}
+
+#memberName {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid grey;
+    margin: 0.5rem;
+    width: 200px; 
+}
+
+#add-member-btn {
+    background-color: grey;
+    width: 100px;
+    padding: 0.5rem;
+   border-radius: 0.5rem;
+   border: 2px solid grey;
+   color: white;
+ }
+
+.chips-container{
+    margin-left: 10px;
+    padding: 0.3rem;
+    
+    text-align: center;
+ }
+
+.chips-container div {
+    display: flex;
+    justify-content: space-around;
+ }
+ 
+.chips-container span {
+   cursor: pointer;
+}
+
+.chips{
+    background-color: grey;
+    max-width: 150px;
+    border-radius: 1rem;
+    color: white;
+    margin-bottom: 0.4rem;
+
+ }
+
+ #submit-btn {
+    background-color: #01CCBB;
+    width: 160px;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid #01CCBB;
+    color: white;
+    margin-bottom: 5px;
+    margin-left: 300px;
+ }
