@@ -1,117 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-*{
-    padding: 0;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "Poppins", sans-serif;
 }
 
 .ProjectBoard {
-    min-height: 100vh;
+	min-height: 100vh;
 }
 
 .innerBoard {
-    padding: 1rem;
+	padding: 1rem;
 }
 
-.innerBoard h2{
-    margin-bottom: 0.5rem;
+.innerBoard h2 {
+	margin-bottom: 0.5rem;
 }
 
 /* Project Card starts from here ()*/
 
 .ProjectCard {
-    display: flex;
-    min-width: 100px;
-    min-height: 50px;
-    background-color: white;
-    box-shadow: 2px 2px 3px #7a7a7a;
-    margin-top: 0.5rem;
-    align-self: start;
+	display: flex;
+	min-width: 100px;
+	min-height: 50px;
+	background-color: white;
+	box-shadow: 2px 2px 3px #7a7a7a;
+	margin-top: 0.5rem;
+	align-self: start;
 }
 
-.SideColor{
-    min-width: 4px;
-    min-height: 50px;
-    background-color: grey;
+.SideColor {
+	min-width: 4px;
+	min-height: 50px;
+	background-color: grey;
 }
 
-.ProjectInfo{
-    flex-direction: column;
-    padding: 1rem;
+.ProjectInfo {
+	flex-direction: column;
+	padding: 1rem;
 }
 
-.ProjectInfo h3{
-    margin-bottom: 0.6rem;
-    color: black;
-    font-size:large;
-    font-weight: 300;
+.ProjectInfo h3 {
+	margin-bottom: 0.6rem;
+	color: black;
+	font-size: large;
+	font-weight: 300;
 }
 
-.TeamMembers{
-    display: flex;
-    align-items: center;
+.TeamMembers {
+	display: flex;
+	align-items: center;
 }
-.TeamMembers p{
-    display: flex;
-    margin-right: 0.2rem;
+.TeamMembers p {
+	display: flex;
+	margin-right: 0.2rem;
 }
 
-.PlusMembers{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 10px;
-    height: 10px;
-    background-color:#01CCBB;
-    border-radius: 50%;
-    padding: 0.5rem;
-    text-align: center;
-    font-size: 10px;
-    color: white;
-    font-weight:300;
+.PlusMembers {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 10px;
+	height: 10px;
+	background-color: #01ccbb;
+	border-radius: 50%;
+	padding: 0.5rem;
+	text-align: center;
+	font-size: 10px;
+	color: white;
+	font-weight: 300;
 }
 
 a {
-    text-decoration: none;
-    color: #797878;
+	text-decoration: none;
+	color: #797878;
 }
 
 /* Add Project Floating button start from here */
-.float-btn{
-	position:fixed;
-	width:130px;
-	height:40px;
-	bottom:60px;
-	right:60px;
-	background-color:rgb(126, 125, 125);
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
+.float-btn {
+	position: fixed;
+	width: 130px;
+	height: 40px;
+	bottom: 60px;
+	right: 60px;
+	background-color: rgb(126, 125, 125);
+	color: #fff;
+	border-radius: 50px;
+	text-align: center;
 	box-shadow: 2px 2px 3px #636262;
-    text-decoration: none;
-    padding: 0.5rem;
+	text-decoration: none;
+	padding: 0.5rem;
 }
 
-.float-btn:hover{
-    background-color: #c2bfbf;
+.float-btn:hover {
+	background-color: #c2bfbf;
 }
 
 .float-btn span {
-    margin-bottom: 40px;
-
+	margin-bottom: 40px;
 }
 
 .float-btn b {
-    margin-bottom: -10px;
-    font-weight: bold;
+	margin-bottom: -10px;
+	font-weight: bold;
 }
 
-.float-btn-container{
-   text-align: center;
-   margin-top: 10px;
+.float-btn-container {
+	text-align: center;
+	margin-top: 10px;
 }
-
-
-
-
