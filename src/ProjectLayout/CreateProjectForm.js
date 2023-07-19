@@ -11,6 +11,10 @@ export default function CreateProjectForm() {
 	const dispatch = useContext(ProjectDispatch);
 	const navigate = useNavigate();
 
+	function handleDeleteMember(deletedTask) {
+		setMembers(members.filter((mem) => mem.id !== deletedTask.id));
+	}
+
 	function handleCreateProject() {
 		dispatch({
 			type: "project_created",
@@ -35,7 +39,11 @@ export default function CreateProjectForm() {
 						placeholder="Enter a Project Name"
 					/>
 				</div>
-				<MemberForm members={members} setMembers={setMembers} />
+				<MemberForm
+					members={members}
+					setMembers={setMembers}
+					onHandleDeleteMember={handleDeleteMember}
+				/>
 				<div>
 					<button id="submit-btn" onClick={handleCreateProject}>
 						Create
