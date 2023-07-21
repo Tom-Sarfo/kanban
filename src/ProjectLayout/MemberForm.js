@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-export default function MemberForm({ members, setMembers }) {
+export default function MemberForm({
+	members,
+	setMembers,
+	onHandleDeleteMember,
+}) {
 	const [member, setMember] = useState("");
 
 	function handleSubmit(e) {
@@ -33,6 +37,7 @@ export default function MemberForm({ members, setMembers }) {
 				{members?.map((myMember) => (
 					<div className="chips" key={myMember.id}>
 						<p>{myMember.name}</p>
+						<span onClick={() => onHandleDeleteMember(myMember)}> x</span>
 					</div>
 				))}
 			</div>
