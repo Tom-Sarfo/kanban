@@ -1,5 +1,5 @@
-import TodoCategory from "./TodoCategory";
-import DoneCategory from "./DoneCategory";
+import TodoCategory from "../TodoCategory";
+import DoneCategory from "../DoneCategory";
 import CreateTaskForm from "./CreateTaskForm";
 import { useState } from "react";
 
