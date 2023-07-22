@@ -1,9 +1,10 @@
 import TodoCategory from "../TodoCategory";
 import DoneCategory from "../DoneCategory";
 import CreateTaskForm from "./CreateTaskForm";
-import { TasksDispatch, TasksContext } from "../stateManagement/TaskContext";
+import { TasksDispatch, TasksContext } from "../stateManagement/ProjectContext";
 import { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
+import "../TaskLayout/TaskBoard.css";
 
 export default function TaskBoard() {
 	const [task, setTask] = useState([]);
