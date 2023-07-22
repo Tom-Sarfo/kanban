@@ -61,6 +61,7 @@ export default function TaskBoard() {
 				<TodoCategory taskData={task} onHandleMoveToDone={handleMoveToDone} />
 				<DoneCategory taskData={task} onHandleUndo={handleUndo} />
 			</div>
+
 			<CreateTaskForm
 				onHandleSubmit={handleFormSubmit}
 				setTaskName={setTaskName}

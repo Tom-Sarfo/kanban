@@ -2,12 +2,13 @@
 
 .TaskBoard {
 	display: flex;
-	margin-right: rem;
+	margin-right: 0.5rem;
 	padding: 0.5rem;
 }
 
 .tasks {
 	display: flex;
+	margin-right: 5rem;
 }
 
 .TodoCategory {
@@ -92,6 +93,13 @@
 	cursor: pointer;
 	margin-right: 0.5rem;
 }
+
+/* .CreateTaskForm input {
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	border: 2px solid grey;
+	margin: 0.5rem;
+} */
 
 .TextInput {
 	padding: 0.5rem;

@@ -21,6 +21,7 @@ export default function CreateTaskForm({
 			>
 				<input
 					type="text"
+					className="TextInput"
 					placeholder="Enter Task"
 					onChange={(e) => setTaskName(e.target.value)}
 				/>
