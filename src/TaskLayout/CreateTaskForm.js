@@ -4,7 +4,7 @@ import { ProjectsContext } from "../stateManagement/ProjectContext";
 
 export default function CreateTaskForm({
 	onHandleSubmit,
-	setTaskInput,
+	setTaskName,
 	setAsignee,
 	setStartDate,
 	setDueDate,
@@ -22,7 +22,7 @@ export default function CreateTaskForm({
 				<input
 					type="text"
 					placeholder="Enter Task"
-					onChange={(e) => setTaskInput(e.target.value)}
+					onChange={(e) => setTaskName(e.target.value)}
 				/>
 				<select
 					name="asignee"

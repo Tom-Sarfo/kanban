@@ -1,5 +1,5 @@
-import TodoCategory from "../TodoCategory";
-import DoneCategory from "../DoneCategory";
+import TodoCategory from "../TaskCategoryLayout/TodoCategory";
+import DoneCategory from "../TaskCategoryLayout/DoneCategory";
 import CreateTaskForm from "./CreateTaskForm";
 import { TasksDispatch, TasksContext } from "../stateManagement/ProjectContext";
 import { useState, useContext } from "react";
