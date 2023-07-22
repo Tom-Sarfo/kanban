@@ -6,6 +6,8 @@ export default function CreateTaskForm({
 	onHandleSubmit,
 	setTaskInput,
 	setAsignee,
+	setStartDate,
+	setDueDate,
 }) {
 	const projects = useContext(ProjectsContext);
 	const { projectId } = useParams();
@@ -39,6 +41,26 @@ export default function CreateTaskForm({
 						));
 					})}
 				</select>
+				<div className="date_container">
+					<label for="start">
+						Start: <br />
+						<input
+							type="date"
+							name="start"
+							id="start_date"
+							onChange={(e) => setStartDate(e.target.value)}
+						/>
+					</label>
+					<label for="due">
+						Due: <br />
+						<input
+							type="date"
+							name="due"
+							id="due_date "
+							onChange={(e) => setDueDate(e.target.value)}
+						/>
+					</label>
+				</div>
 				<button type="submit">Add Task</button>
 			</form>
 		</section>

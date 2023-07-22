@@ -1,30 +1,38 @@
 import TodoCategory from "../TodoCategory";
 import DoneCategory from "../DoneCategory";
 import CreateTaskForm from "./CreateTaskForm";
-import { useState } from "react";
+import { TasksDispatch, TasksContext } from "../stateManagement/TaskContext";
+import { useState, useContext } from "react";
+import { useParams } from "react-router-dom";
 
 export default function TaskBoard() {
 	const [task, setTask] = useState([]);
-	const [taskInput, setTaskInupt] = useState("");
+	const [taskName, setTaskName] = useState("");
 	const [asignee, setAsignee] = useState("");
+	const [startDate, setStartDate] = useState("");
+	const [dueDate, setDueDate] = useState("");
+
+	const { projectId } = useParams();
+
+	const dispatch = useContext(TasksDispatch);
+	const tasks = useContext(TasksContext);
 
 	function handleFormSubmit(e) {
 		e.preventDefault();
-		setTask([
-			...task,
-			{
-				id: task.length + 1,
-				task: taskInput,
-				assignedTo: asignee,
-				done: false,
-			},
-		]);
+		dispatch({
+			type: "task_added",
+			taskName: taskName,
+			asignee: asignee,
+			start: startDate,
+			due: dueDate,
+			projectId: projectId,
+		});
 		e.target.reset();
 	}
 
 	function handleMoveToDone(checkedTask) {
 		setTask(
-			task?.map((myTask) => {
+			tasks?.map((myTask) => {
 				if (myTask.id === checkedTask.id) {
 					return checkedTask;
 				} else {
@@ -36,7 +44,7 @@ export default function TaskBoard() {
 
 	function handleUndo(taskToUndo) {
 		setTask(
-			task?.map((myTask) => {
+			tasks?.map((myTask) => {
 				if (myTask.id === taskToUndo.id) {
 					return taskToUndo;
 				} else {
@@ -48,15 +56,17 @@ export default function TaskBoard() {
 
 	return (
 		<div className="TaskBoard">
-			<CreateTaskForm
-				onHandleSubmit={handleFormSubmit}
-				setTaskInput={setTaskInupt}
-				setAsignee={setAsignee}
-			/>
 			<div className="tasks">
 				<TodoCategory taskData={task} onHandleMoveToDone={handleMoveToDone} />
 				<DoneCategory taskData={task} onHandleUndo={handleUndo} />
 			</div>
+			<CreateTaskForm
+				onHandleSubmit={handleFormSubmit}
+				setTaskName={setTaskName}
+				setAsignee={setAsignee}
+				setStartDate={setStartDate}
+				setDueDate={setDueDate}
+			/>
 		</div>
 	);
 }
