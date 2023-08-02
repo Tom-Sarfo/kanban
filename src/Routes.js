@@ -1,5 +1,5 @@
 import KanbanBoard from "./KanbanBoard";
-import TaskBoard from "./TaskBoard";
+import TaskBoard from "./TaskLayout/TaskBoard";
 import ProjectBoard from "./ProjectLayout/ProjectBoard";
 import CreateProjectForm from "./ProjectLayout/CreateProjectForm";
 import ErrorPage from "./ErrorPage";
