@@ -18,6 +18,18 @@ export default function EditTaskCard() {
 
 	const [myTasks, setMyTasks] = useState(editedtask[0]);
 
+	function handleSubmit(e) {
+		e.preventDefault();
+		dispatch({
+			type: "edited",
+			editedId: taskId,
+			taskName: myTasks.taskName,
+			asignee: myTasks.asignee,
+			rest: myTasks,
+		});
+		navigate(`/board/projects/${myTasks.projectId}`);
+	}
+
 	function handleChange(e) {
 		setMyTasks({ ...myTasks, [e.target.name]: e.target.value });
 	}
@@ -26,7 +38,7 @@ export default function EditTaskCard() {
 		<article className="EditTaskCard">
 			<div className="side-color"></div>
 			<div className="wrapper">
-				<form>
+				<form onSubmit={handleSubmit}>
 					<label for="taskName">
 						Task: <br />
 						<input
@@ -48,6 +60,16 @@ export default function EditTaskCard() {
 							onChange={handleChange}
 						>
 							<option value="">Change Asignee</option>
+							{projects.map((project) => {
+								let projectMembers = project.members.filter(
+									(mem) => project.id === Number(myTasks.projectId)
+								);
+								return projectMembers.map((member) => (
+									<option key={member.id} value={member.name}>
+										{member.name}
+									</option>
+								));
+							})}
 						</select>{" "}
 					</label>
 					<br />
