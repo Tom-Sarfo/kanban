@@ -4,7 +4,7 @@ import {
 	TasksContext,
 	ProjectsContext,
 	TasksDispatch,
-} from "../stateManagement/TaskContext";
+} from "../stateManagement/ProjectContext";
 import { useContext, useState } from "react";
 import "../TaskCardLayout/EditTask.css";
 
@@ -27,7 +27,7 @@ export default function EditTaskCard() {
 			asignee: myTasks.asignee,
 			rest: myTasks,
 		});
-		navigate(`/board/projects/${myTasks.projectId}`);
+		navigate(`/projects/${myTasks.projectId}`);
 	}
 
 	function handleChange(e) {
