@@ -38,6 +38,13 @@ export default function EditTaskCard() {
 		<article className="EditTaskCard">
 			<div className="side-color"></div>
 			<div className="wrapper">
+				{projects.map((project) => {
+					return (
+						project.id === Number(myTasks.projectId) && (
+							<h1>{project.projectName}</h1>
+						)
+					);
+				})}
 				<form onSubmit={handleSubmit}>
 					<label for="taskName">
 						Task: <br />
