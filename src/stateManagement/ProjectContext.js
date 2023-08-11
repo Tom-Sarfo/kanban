@@ -51,6 +51,21 @@ export function tasksReducer(tasks, action) {
 			});
 		}
 
+		case "edited": {
+			let unEditedTasks = tasks.filter(
+				(task) => task.id !== Number(action.editedId)
+			);
+			return [
+				{
+					id: action.editedId,
+					taskName: action.taskName,
+					asignee: action.asignee,
+					...action.rest,
+				},
+				...unEditedTasks,
+			];
+		}
+
 		default:
 			throw Error("Unknown error: " + action.type);
 	}
